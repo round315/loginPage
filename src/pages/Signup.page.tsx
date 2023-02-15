@@ -6,6 +6,7 @@ import { object, string, TypeOf } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FormInput from '../components/FormInput';
 import Header from './header';
+import { Link } from 'react-router-dom';
 
 
 // 👇 SignUp Schema with Zod
@@ -160,7 +161,7 @@ const SignupPage: FC = () => {
               <Grid container justifyContent='center'>
                 <Stack sx={{ mt: '3rem', textAlign: 'center' }}>
                   <Typography sx={{ fontSize: '0.9rem', mb: '1rem' }}>
-                    Already have an account? <LinkItem to='/'>Login</LinkItem>
+                    Already have an account? <Link to='/'>Login</Link>
                   </Typography>
                 </Stack>
               </Grid>

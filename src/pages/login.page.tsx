@@ -141,11 +141,11 @@ const LoginPage: FC = () => {
                 <Stack sx={{ mt: '3rem', textAlign: 'center' }}>
                   <Typography sx={{ fontSize: '0.9rem', mb: '1rem' }}>
                     Need an account?{' '}
-                    <LinkItem to='/signup'>Sign up here</LinkItem>
+                    <Link to='/signup'>Sign up here</Link>
                   </Typography>
                   <Typography sx={{ fontSize: '0.9rem' }}>
                     Forgot your{' '}
-                    <LinkItem to='/forgotPassword'>password?</LinkItem>
+                    <Link to='/forgotPassword'>password?</Link>
                   </Typography>
                 </Stack>
               </Grid>
