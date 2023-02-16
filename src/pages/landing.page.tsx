@@ -1,18 +1,9 @@
 import {
-  Container,
-  AppBar,
-  Toolbar,
-  Button,
-  IconButton,
-  Grid,
-  Box,
   Typography,
-  Stack,
-  Link as MuiLink,
-  FormControlLabel,
-  Checkbox,
+  Grid,
+  Button,
 } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
+import { styled } from '@mui/system';
 
 import LoadingButton from '@mui/lab/LoadingButton';
 import { FC } from 'react';
@@ -20,53 +11,43 @@ import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { literal, object, string, TypeOf } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import mainImage from '../image/main.jpg';
 
 import Header from './header';
 
-// 👇 Login Schema with Zod
-const loginSchema = object({
-  email: string().min(1, 'Email is required').email('Email is invalid'),
-  password: string()
-    .min(1, 'Password is required')
-    .min(8, 'Password must be more than 8 characters')
-    .max(32, 'Password must be less than 32 characters'),
-  persistUser: literal(true).optional(),
-});
+const MainContainer = styled('div')(() => ({
+  display: 'flex',
+  justifyContent: "center",
+  backgroundColor: 'grey',
+  backgroundImage: '../image/main.jpg',
+  alignItems: 'center',
+  height: "100vh"
+}))
 
-// 👇 Infer the Schema to get the TS Type
-type ILogin = TypeOf<typeof loginSchema>;
 
-const LoginPage: FC = () => {
-  // 👇 Default Values
-  const defaultValues: ILogin = {
-    email: '',
-    password: '',
-  };
 
-  // 👇 The object returned from useForm Hook
-  const methods = useForm<ILogin>({
-    resolver: zodResolver(loginSchema),
-    defaultValues,
-  });
-
-  // 👇 Submit Handler
-  const onSubmitHandler: SubmitHandler<ILogin> = (values: ILogin) => {
-    console.log(values);
-  };
+const LandingPage: FC = () => {
 
   // 👇 JSX to be rendered
   return (
-    <Container
-      maxWidth={false}
-      sx={{ height: '100vh', backgroundColor: { xs: '#fff', md: '#f4f4f4' } }}
-    >
-      <Header/>
-    <Typography mt={2}>
-      Welcome, My test project!
-    </Typography>
-    <Button>Go to Login</Button>
-    </Container>
+    <>
+      <div>
+        <Header/>
+        <div>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+                <MainContainer>
+                  <Typography variant="h2">
+                    Welcome my test project
+                  </Typography>
+                </MainContainer>
+                
+            </Grid>
+          </Grid>
+        </div>
+    </div>
+    </>
   );
 };
 
-export default LoginPage;
+export default LandingPage;

@@ -8,6 +8,8 @@ import {
   FormControlLabel,
   Checkbox,
 } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+
 import LoadingButton from '@mui/lab/LoadingButton';
 import { FC } from 'react';
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form';
@@ -16,8 +18,6 @@ import { literal, object, string, TypeOf } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FormInput from '../components/FormInput';
 import Header from './header';
-
-
 
 
 // 👇 Login Schema with Zod
@@ -39,6 +39,9 @@ const LoginPage: FC = () => {
     email: '',
     password: '',
   };
+  // declare navigate
+  const navigate = useNavigate();
+
 
   // 👇 The object returned from useForm Hook
   const methods = useForm<ILogin>({
@@ -57,7 +60,7 @@ const LoginPage: FC = () => {
       <Header />
     <Container
       maxWidth={false}
-      sx={{ height: '100vh', backgroundColor: { xs: '#fff', md: '#f4f4f4' } }}
+      sx={{ height: "100vh", backgroundColor: { xs: '#fff', md: '#f4f4f4' } }}
     >
       <Grid
         container
@@ -134,6 +137,19 @@ const LoginPage: FC = () => {
                     >
                       Login
                     </LoadingButton>
+                    <LoadingButton
+                      loading={false}
+                      variant='contained'
+                      sx={{
+                        py: '0.8rem',
+                        mt: 2,
+                        width: '80%',
+                        marginInline: 'auto',
+                      }}
+                      onClick={() => navigate(-1)}
+                    >
+                      Cancel
+                    </LoadingButton>
                   </Box>
                 </Grid>
               </Grid>
@@ -142,10 +158,6 @@ const LoginPage: FC = () => {
                   <Typography sx={{ fontSize: '0.9rem', mb: '1rem' }}>
                     Need an account?{' '}
                     <Link to='/signup'>Sign up here</Link>
-                  </Typography>
-                  <Typography sx={{ fontSize: '0.9rem' }}>
-                    Forgot your{' '}
-                    <Link to='/forgotPassword'>password?</Link>
                   </Typography>
                 </Stack>
               </Grid>

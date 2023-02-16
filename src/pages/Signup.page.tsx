@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import FormInput from '../components/FormInput';
 import Header from './header';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 // 👇 SignUp Schema with Zod
@@ -35,6 +36,9 @@ const SignupPage: FC = () => {
     passwordConfirm: '',
   };
 
+  // declare navigate
+  const navigate = useNavigate();
+
   // 👇 Object containing all the methods returned by useForm
   const methods = useForm<ISignUp>({
     resolver: zodResolver(signupSchema),
@@ -52,7 +56,7 @@ const SignupPage: FC = () => {
       <Header/>
     <Container
       maxWidth={false}
-      sx={{ height: '100vh', backgroundColor: { xs: '#fff', md: '#f4f4f4' } }}
+      sx={{ height: "100vh", backgroundColor: { xs: '#fff', md: '#f4f4f4' } }}
     >
       <Grid
         container
@@ -155,13 +159,26 @@ const SignupPage: FC = () => {
                     >
                       Sign Up
                     </LoadingButton>
+                    <LoadingButton
+                      loading={false}
+                      variant='contained'
+                      sx={{
+                        py: '0.8rem',
+                        mt: 2,
+                        width: '80%',
+                        marginInline: 'auto',
+                      }}
+                      onClick={() => navigate(-1)}
+                    >
+                      Cancel
+                    </LoadingButton>
                   </Box>
                 </Grid>
               </Grid>
               <Grid container justifyContent='center'>
                 <Stack sx={{ mt: '3rem', textAlign: 'center' }}>
                   <Typography sx={{ fontSize: '0.9rem', mb: '1rem' }}>
-                    Already have an account? <Link to='/'>Login</Link>
+                    Already have an account? <Link to='/login'>Login</Link>
                   </Typography>
                 </Stack>
               </Grid>
