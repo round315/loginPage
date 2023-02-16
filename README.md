@@ -1,3 +1,20 @@
+### Hello, Juan <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">
+
+  <br />
+
+  Sorry, suddenly my account has been suspended.
+  So, I can't contact you and stopped working.
+  If you are interested in me, please contact me.
+  Waiting for your reply.
+  Thanks.
+
+  <h2> Connect with me <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="100px"> </h2>
+
+
+- [💬 skypeID:](skype:live:.cid.5a9dfcfd52eff241)live:.cid.5a9dfcfd52eff241
+- [📝 Email:](mailto:roundearthmoon@gmail.com)roundearthmoon@gmail.com
+- [Telegram:](https://t.me/frontendengineering0904)@frontendengineering0904
+- [WhatsApp:]447915927191
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
