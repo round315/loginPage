@@ -11,10 +11,10 @@
   <h2> Connect with me <img src='https://raw.githubusercontent.com/ShahriarShafin/ShahriarShafin/main/Assets/handshake.gif' width="100px"> </h2>
 
 
-- [💬 skypeID:](https://live:.cid.5a9dfcfd52eff241)live:.cid.5a9dfcfd52eff241
+- [💬 skypeID:]live:.cid.5a9dfcfd52eff241
 - [📝 Email:](mailto:roundearthmoon@gmail.com)roundearthmoon@gmail.com
 - [Telegram:](https://t.me/frontendengineering0904)@frontendengineering0904
-- [WhatsApp:](https://webwhatsapp.com/send?phone=447915927191)447915927191
+- [WhatsApp:]447915927191
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
